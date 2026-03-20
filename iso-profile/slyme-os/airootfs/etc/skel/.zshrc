@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export GEMINI_API_KEY="AIzaSyAvxolDz9qVHz5seUnjZdBpvm3n523g2Qs"
+
 
 export PATH="$HOME/.local/bin:$PATH"
 #exec ~/.local/share/gemini-solver/venv/bin/python ~/.local/share/gemini-solver/slatt.py "$@"
