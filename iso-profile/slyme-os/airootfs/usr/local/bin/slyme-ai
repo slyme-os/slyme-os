@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Slyme OS — AI daemon wrapper
+DAEMON_PATH="/usr/local/lib/slyme-ai/slyme-ai.py"
+LOG="/var/log/slyme-ai.log"
+
+if [[ ! -f "$DAEMON_PATH" ]]; then
+    echo "[slyme-ai] ERROR: daemon not found at $DAEMON_PATH" | tee -a "$LOG"
+    exit 1
+fi
+
+# Check if Ollama is reachable
+if ! curl -sf http://localhost:11434/api/version > /dev/null 2>&1; then
+    echo "[slyme-ai] WARNING: Ollama not reachable — starting in degraded mode" | tee -a "$LOG"
+    export SLYME_DEGRADED=1
+fi
+
+exec python3 "$DAEMON_PATH" "$@"

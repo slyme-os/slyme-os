@@ -1,0 +1,170 @@
+# ── BASE SYSTEM ──────────────────────────────────────────────
+alacritty
+calamares
+base
+base-devel
+linux-zen
+linux-zen-headers
+linux-firmware
+linux-firmware-qlogic
+mkinitcpio
+mkinitcpio-archiso
+
+# ── BOOT ─────────────────────────────────────────────────────
+grub
+efibootmgr
+efivar
+os-prober
+mtools
+dosfstools
+gptfdisk
+parted
+
+# ── PACMAN & PACKAGE MANAGEMENT ──────────────────────────────
+pacman
+pacman-contrib
+archlinux-keyring
+reflector
+
+# ── NETWORK ──────────────────────────────────────────────────
+networkmanager
+network-manager-applet
+iwd
+wireless_tools
+wpa_supplicant
+openssh
+curl
+wget
+
+# ── XORG / DISPLAY ───────────────────────────────────────────
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+xorg-xprop
+xorg-xdpyinfo
+xorg-xauth
+xorg-xdriinfo
+libx11
+libxft
+libxinerama
+libxrender
+libxext
+libxss
+mesa
+mesa-utils
+
+# ── FONTS ─────────────────────────────────────────────────────
+ttf-jetbrains-mono
+noto-fonts
+noto-fonts-emoji
+terminus-font
+
+# ── AUDIO ─────────────────────────────────────────────────────
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+pavucontrol
+alsa-utils
+
+# ── SHELL & TERMINAL ──────────────────────────────────────────
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+bash
+dash
+
+# ── PYTHON (for slyme-ai daemon) ──────────────────────────────
+python
+python-pip
+python-requests
+python-psutil
+
+# ── DEV TOOLS ─────────────────────────────────────────────────
+git
+neovim
+lua
+luarocks
+go
+gcc
+make
+cmake
+pkg-config
+kitty
+dmenu
+
+# ── SYSTEM UTILITIES ──────────────────────────────────────────
+sudo
+which
+less
+man-db
+man-pages
+texinfo
+htop
+btop
+tree
+ripgrep
+fd
+fzf
+jq
+unzip
+zip
+tar
+gzip
+rsync
+stow
+
+# ── FILE MANAGEMENT ───────────────────────────────────────────
+ranger
+ueberzug
+ffmpegthumbnailer
+
+# ── CALAMARES RUNTIME DEPENDENCIES ───────────────────────────
+# (calamares itself will come from local repo — see Step 2.3)
+qt5-base
+qt5-svg
+qt5-xmlpatterns
+qt5-tools
+kpmcore
+boost-libs
+yaml-cpp
+libpwquality
+python-jsonschema
+
+
+# ── ARCHISO TOOLS (needed in live env) ────────────────────────
+arch-install-scripts
+squashfs-tools
+
+# ── MISC LIVE SESSION TOOLS ───────────────────────────────────
+gparted
+os-prober
+memtest86+
+dmidecode
+inxi
+pciutils
+usbutils
+lshw
+calamares
+
+# my current font which i am using --
+ttf-anka-coder
+kitty
+syslinux
+
+# KDE Frameworks 6 — required by Calamares 3.4.0
+
+# Calamares runtime dependencies (KDE Frameworks 6)
+kcoreaddons
+kcrash
+ki18n
+kwidgetsaddons
+kpmcore
+yaml-cpp
+libpwquality
+
+# slime app dependencies
+python-textual
+python-rich

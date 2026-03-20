@@ -1,0 +1,12 @@
+# Slyme OS environment
+EDITOR=nvim
+VISUAL=nvim
+TERMINAL=kitty
+BROWSER=firefox
+SHELL=/bin/zsh
+SLYME_VERSION=0.9.9
+OLLAMA_HOST=127.0.0.1:11434
+SLYME_AI_SOCKET=/run/slyme-ai.sock
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_CACHE_HOME="$HOME/.cache"

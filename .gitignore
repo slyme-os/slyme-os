@@ -1,0 +1,36 @@
+# ISO output — too large for GitHub (upload to Releases instead)
+output/
+*.iso
+
+# Build working directory
+/tmp/slyme-work/
+
+# Ollama binary — users download this themselves
+iso-profile/slyme-os/airootfs/usr/local/bin/ollama
+
+# Calamares debug package — not needed in repo
+iso-profile/slyme-os/local-repo/calamares-debug-*.pkg.tar.zst
+
+# Large binary files — document how to rebuild instead
+iso-profile/slyme-os/airootfs/usr/local/bin/sliwm
+iso-profile/slyme-os/airootfs/usr/local/bin/dmenu
+iso-profile/slyme-os/airootfs/usr/local/bin/kitty
+
+# pacman build cache
+*.pkg.tar.zst.sig
+pkg/
+src/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

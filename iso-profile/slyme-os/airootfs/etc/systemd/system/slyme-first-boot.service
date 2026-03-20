@@ -1,0 +1,15 @@
+[Unit]
+Description=Slyme OS First Boot — Pull Default AI Model
+After=ollama.service network-online.target
+Wants=network-online.target ollama.service
+ConditionPathExists=!/var/lib/ollama/.first-boot-done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/slyme-ai/first-boot.sh
+RemainAfterExit=yes
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

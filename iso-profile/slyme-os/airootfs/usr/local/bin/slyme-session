@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Slyme OS — session launcher
+export SLYME_SESSION=1
+startx /etc/skel/.xinitrc -- :0 vt1

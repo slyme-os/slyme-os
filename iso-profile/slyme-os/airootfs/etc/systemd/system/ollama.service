@@ -1,0 +1,22 @@
+[Unit]
+Description=Ollama Local LLM Service
+Documentation=https://ollama.com
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/local/bin/ollama serve
+Restart=on-failure
+RestartSec=5
+Environment=OLLAMA_HOST=127.0.0.1:11434
+Environment=HOME=/root
+Environment=OLLAMA_MODELS=/var/lib/ollama/models
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ollama
+
+[Install]
+WantedBy=multi-user.target

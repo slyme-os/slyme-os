@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Slyme OS — system status overview
+
+GREEN='\033[0;32m'
+DIM='\033[2m'
+BOLD='\033[1m'
+RESET='\033[0m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+
+echo -e "${GREEN}${BOLD}"
+echo "  ███████╗██╗  ██╗   ██╗███╗   ███╗███████╗      ██████╗ ███████╗"
+echo "  ██╔════╝██║  ╚██╗ ██╔╝████╗ ████║██╔════╝     ██╔═══██╗██╔════╝"
+echo "  ███████╗██║   ╚████╔╝ ██╔████╔██║█████╗       ██║   ██║███████╗"
+echo "  ╚════██║██║    ╚██╔╝  ██║╚██╔╝██║██╔══╝       ██║   ██║╚════██║"
+echo "  ███████║███████╗██║   ██║ ╚═╝ ██║███████╗     ╚██████╔╝███████║"
+echo "  ╚══════╝╚══════╝╚═╝   ╚═╝     ╚═╝╚══════╝      ╚═════╝ ╚══════╝"
+echo -e "${RESET}"
+echo -e "${DIM}  AI-Native Linux · v0.9.9 · slyme-os.github.io${RESET}"
+echo ""
+
+check() {
+    local name="$1"
+    local cmd="$2"
+    if eval "$cmd" > /dev/null 2>&1; then
+        echo -e "  ${GREEN}●${RESET} ${name}"
+    else
+        echo -e "  ${RED}●${RESET} ${name} ${RED}(offline)${RESET}"
+    fi
+}
+
+echo -e "  ${BOLD}SYSTEM STATUS${RESET}"
+check "Ollama daemon"    "systemctl is-active --quiet ollama"
+check "slyme-ai daemon"  "systemctl is-active --quiet slyme-ai"
+check "NetworkManager"  "systemctl is-active --quiet NetworkManager"
+check "Ollama API"      "curl -sf http://localhost:11434/api/version"
+
+echo ""
+echo -e "  ${BOLD}AI INFO${RESET}"
+MODELS=$(ollama list 2>/dev/null | tail -n +2 | awk '{print $1}' | tr '\n' ' ')
+if [[ -n "$MODELS" ]]; then
+    echo -e "  ${GREEN}Models loaded:${RESET} $MODELS"
+else
+    echo -e "  ${YELLOW}No models loaded.${RESET} Run: ollama pull phi3:mini"
+fi
+
+echo ""
+echo -e "  ${BOLD}QUICK COMMANDS${RESET}"
+echo -e "  ${GREEN}install-slyme${RESET}   — launch the Calamares installer"
+echo -e "  ${GREEN}ollama pull phi3:mini${RESET} — download fast AI model (~2GB)"
+echo -e "  ${GREEN}slyme-ai status${RESET} — query daemon status"
+echo ""

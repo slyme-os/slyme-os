@@ -1,0 +1,32 @@
+---
+componentName: slyme-os
+
+welcomeStyleCalamares: false
+welcomeExpandingLogo: false
+
+strings:
+  productName:         "Slyme OS"
+  shortProductName:    "Slyme OS"
+  version:             "0.9.9"
+  shortVersion:        "0.9.9"
+  versionedName:       "Slyme OS 0.9.9"
+  shortVersionedName:  "Slyme OS 0.9.9"
+  bootloaderEntryName: "Slyme OS"
+  productUrl:          "https://slyme-os.github.io"
+  supportUrl:          "https://github.com/slyme-os"
+  releaseNotesUrl:     "https://github.com/slyme-os"
+  knownIssuesUrl:      "https://github.com/slyme-os/issues"
+
+images:
+  productLogo:    "slyme-logo.png"
+  productIcon:    "slyme-logo.png"
+  productWelcome: "slyme-logo.png"
+
+slideshow:               "show.qml"
+slideshowAPI:            2
+
+style:
+  sidebarBackground:    "#030703"
+  sidebarText:          "#39ff14"
+  sidebarTextSelect:    "#000000"
+  sidebarTextHighlight: "#39ff14"
